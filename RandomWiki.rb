@@ -11,10 +11,10 @@ def wiki(num)
       charset = f.charset
       f.read
     end
-    print "*"
     doc = Nokogiri::HTML.parse(html, nil, charset)
     doc.title =~ /\w*(?= - Wikipedia)/
     result << $`
+    print "*"
   end
   puts ""
   puts result
